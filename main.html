@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Men,Women &Kids online shopping</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="shortcut icon" href="title icon.jpg" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            /* overflow-x: scroll; */
+
+        }
+
+        .navbar {
+            display: flex;
+           position: sticky;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        .nav-items a {
+            margin: 0 12px;
+          text-decoration: none;
+            color:#002b4d;
+            
+        }
+        .nav-items :hover{
+            color: red;
+        }
+
+        .search-bar {
+            padding: 6px 12px;
+            /* border: 1px solid #ccc; */
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid black;
+            /* border-radius: 20px; */
+        }
+        .express img{
+            width: 70%;
+        }
+
+        /* body */
+        .main img {
+            height: auto;
+            /* width: 100%; */
+        }
+
+        /* round */
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .category img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: fill;
+            border: 2px solid transparent;
+            transition: transform 0.3s, border 0.3s;
+        }
+
+        .category p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #092b54;
+        }
+
+        .round {
+            width: auto;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: -15px;
+
+        }
+
+        .scan img {
+            margin-top: -15px;
+            height: auto;
+            width: 100%;
+            object-fit: fill;
+        }
+
+        .discover {
+            width: auto;
+            height: 27px;
+            color: #0e3051;
+            font-size: 21px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .Elevate {
+            font-size: 13px;
+            width: auto;
+            height: 23px;
+            text-align: center;
+            padding-top: 10px;
+
+        }
+
+        .two {
+            height: auto;
+            width: auto;
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+
+        /* designer class */
+        .designer {
+            margin-left: 40px;
+        }
+
+        .left-banner {
+            background-image: url("Designerpicks.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            min-height: 500px;
+            position: relative;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #002b4d;
+            color: white;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-card img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .color-dot {
+            width: 14px;
+            height: 14px;
+            background-color: navy;
+            border-radius: 50%;
+            display: inline-block;
+            border: 1px solid #555;
+            padding-top: 10px;
+        }
+
+        /* scrolloing images */
+        .trending {
+            width: auto;
+            height: 800px;
+            background-color: #002b4d;
+
+
+
+        }
+
+        .trending h2 {
+            color: rgb(235, 235, 52);
+            font-weight: bold;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .all {
+            color: white;
+            margin-top: -700px;
+            margin-left: 550px;
+            width: 400px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            text-decoration: none;
+        }
+
+        .all a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .scrolling-pics {
+            height: 200px;
+            width: 200px;
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: 40px;
+        }
+
+        .all-products {
+            margin-left: 40px;
+        }
+
+        .heart {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: black;
+            background-color: white(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .home-price {
+            font-size: 13px;
+            color: white;
+        }
+
+        .home-card {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 500px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            background-color: white;
+            position: relative;
+        }
+
+        .home-card img {
+            width: 100%;
+            height: 500px;
+            justify-content: space-evenly;
+            object-fit: cover;
+        }
+
+        .price {
+            color: white;
+            font-size: small;
+        }
+
+        .describe {
+            font-size: 18px;
+
+        }
+
+        .price-old {
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: line-through;
+            color: white;
+            
+        }
+        .new-price{
+             font-size: 18px;
+            font-weight: bold;
+             color: white;
+             padding-left: 5px;
+        }
+
+        .divider2 {
+            width: 100%;
+            object-fit: cover;
+            margin-top: 450px;
+            text-align: center;
+            height: 100px;
+        }
+
+
+
+        .box-details {
+            display: flex;
+            padding-top: 40px;
+            padding-left: 30px;
+        }
+
+         .discount {
+            color: #ff4081;
+            font-size: 16px;
+        }
+
+        .color-dot {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 5px;
+            border: 2px solid white;
+        }
+
+        .navy-dot {
+            background-color: navy;
+        } 
+                .color-writtings{
+            margin-top: -3px;
+            color: white;
+        }
+        /* .dot-content{
+            margin-top: -5px;
+            margin-left: 10px;
+        } */
+
+        .storelocator {
+
+            height: 170px;
+            background-color: #ffdf00;
+
+        }
+
+        .storelocator img {
+            margin-left: 400px;
+
+        }
+
+        .location h2 {
+            color: #002b4d;
+            margin-left: 600px;
+            margin-top: -120px;
+        }
+
+        .store {
+            margin-left: 520px;
+            color: #002b4d;
+            font-size: 28px;
+            font-weight: bold;
+
+        }
+
+        .store-input input {
+            height: 60%;
+            width: 19%;
+            background-color: #ffdf00;
+            border-color: black;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-left: 850px;
+            padding-bottom: 20px;
+            margin-top: -200px;
+
+        }
+
+        .store a {
+            color: black;
+            text-decoration-color: red;
+        }
+
+        .laddy-sitting {
+            background-image: url("yellow.png");
+            height: 440px;
+            background-repeat: no-repeat;
+
+        }
+
+        .yellow-box {
+            height: 450px;
+            width: 800px;
+            background-color: #ffdf00;
+            width: 600px;
+            height: 300px;
+            margin-left: 800px;
+            margin-top: -350px;
+            border-radius: 2%;
+            color: #002b4d;
+
+
+        }
+
+        .yellow-box h2 {
+            margin-left: 28px;
+        }
+
+        .yellow-box p {
+            margin-left: 28px;
+            color: rgb(153, 152, 152);
+        }
+
+        .yellow-box button {
+            background-color: #002b4d;
+            color: #ffdf00;
+            width: 220px;
+            height: 40px;
+            margin-left: 140px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        /* blue box */
+        .bluebox {
+            width: 100%;
+            height: 110px;
+            padding-top: 40px;
+            background-color: #002b4d;
+
+        }
+
+
+        .earn {
+            font-size: 26px;
+            text-align: center;
+
+
+        }
+
+        .gift {
+            margin-left: 460px;
+            margin-top: -60px;
+        }
+
+        .Invite {
+            margin-top: -20px;
+            margin-left: 550px;
+            color: white;
+
+        }
+
+        .btn {
+            margin-top: -100px;
+            color: #002b4d;
+            background-color: #ffdf00;
+            width: 150px;
+            height: 40px;
+            margin-left: 1040px;
+
+            border-radius: 10px;
+            border: none;
+        }
+
+        .view-products {
+            height: 70px;
+            width: 400px;
+            background-color: #002b4d;
+            color: white;
+            border-radius: 10px;
+            align-content: center;
+            margin-left: 580px;
+            margin-top: 40px;
+            padding-left: 90px;
+            margin-bottom: 20px;
+        }
+
+        .icon3 {
+            display: flex;
+            /* margin-left: 300px; */
+            width: 100%;
+            font-size: 12px;
+            color: black;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ddd;
+            justify-content: space-evenly;
+
+        }
+
+        .shipping {
+            display: block;
+            /* margin-right: 30px; */
+            padding-right: 50px;
+        }
+
+        .return {
+            display: block;
+            /* margin-left: 280px;
+            margin-right: 30px; */
+            text-align: center;
+        }
+
+        .delivery {
+            display: block;
+            /* margin-left: 240px;
+            margin-right: 30px; */
+            text-align: center;
+        }
+
+
+        /* footer class */
+        .main-footer {
+            display: flex;
+
+            border-bottom: 2px solid #ddd;
+        }
+
+        .need {
+            font-size: 13px;
+            font-weight: bold;
+            padding-bottom: 5px;
+            color: #222;
+
+        }
+
+        .help {
+            font-size: small;
+            color: #222;
+
+
+        }
+
+        .about {
+            font-size: 13px;
+            font-weight: bold;
+            padding-bottom: 5px;
+            color: #222;
+
+        }
+
+        .us {
+            font-size: small;
+            color: #222;
+
+        }
+
+        .about-us {
+            height: 280px;
+            width: auto;
+            display: flex;
+            /* margin-bottom: 2px solid #222;
+            margin-top: 2px solid #222; */
+        }
+
+        /* .social-icons {
+            margin-left: 900px;
+        } */
+        .join h3 {
+            font-size: 13px;
+            color: #002b4d;
+            font-weight: bold;
+        }
+
+        .join p {
+            font-size: smaller;
+        }
+
+        .join {
+            margin-left: 300px;
+        }
+
+        .join input {
+            width: 90%;
+            padding: 8px;
+            border-right: 0px;
+            font-size: 14px;
+            border-top: 0px;
+            border-left: 0px;
+            border-color: none;
+        }
+
+        .foot1 {
+            padding-left: 100px;
+        }
+
+        .foot2 {
+            padding-left: 100px;
+        }
+
+        .details p {
+            font-size: small;
+            color: #222;
+        }
+
+        .number-headings {
+            font-size: 16px;
+            font-weight: bold;
+            color: #222;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .detail-contents {
+            font-size: 13px;
+            color: #222;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .details {
+            margin-left: 90px;
+            margin-right: 50px;
+        }
+
+        .policy {
+            margin-top: 30px;
+            color: grey;
+            font-size: small;
+        }
+
+
+
+        /* below footer class */
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <img src="logo.png" alt="Allen Solly Logo" class="logo" />
+        <nav class="nav-items">
+            <a href="main.html">SALE</a>
+            <a href="men.html">MENS</a>
+            <a href="women.html">WOMENS</a>
+            <a href="main.html">JUNIORS</a>
+            <a href="main.html">SPECIAL SIZES</a>
+            <a href="main.html">NEW ARRIVALS</a>
+        </nav>
+        <input type="text" placeholder="🔍Search Bags" class="search-bar" />
+
+        <div class="express"><img src="express.png" alt=""></div>
+        <div class="birla"><img src="ABFRL_logo_image.svg" alt=""></div>
+    </header>
+    <!-- body -->
+    <section>
+        <!-- main  3 images-->
+        <div class="main">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="frst.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="second.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="third.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- round -->
+        <div class="round">
+            <div class="category">
+                <img src="men.avif" alt="SALE">
+                <p>SALE</p>
+            </div>
+            <div class="category">
+                <img src="women.avif" alt="MEN">
+                <p>MEN</p>
+            </div>
+            <div class="category">
+                <img src="kids.avif" alt="WOMEN">
+                <p>WOMEN</p>
+            </div>
+            <div class="category">
+                <img src="girls.avif" alt="BOYS">
+                <p>BOYS</p>
+            </div>
+            <div class="category">
+                <img src="laddy.avif" alt="GIRLS">
+                <p>GIRLS</p>
+            </div>
+            <div class="category">
+                <img src="men.avif" alt="GIFT CARDS">
+                <p>GIFT CARDS</p>
+            </div>
+        </div>
+        <!-- scan -->
+        <div class="scan"><img src="scan.png" alt=""></div>
+        <!-- divider section  -->
+        <div class="divider"><img src="divider_2x.jpg" alt=""></div>
+        <!-- next section -->
+        <div>
+            <div class="discover">DISCOVER OUR ONLINE EXCLUSIVE COLLECTIONS</div>
+            <div class="Elevate">Elevate Your Style: Shop the Freshest Styles from our Online Exclusive Collections
+            </div>
+        </div>
+        <!-- images -->
+        <div class="two">
+            <img src="bluemen.jpg" alt="">
+            <img src="twomens.jpg" alt="">
+            <img src="twowomens.jpg" alt="">
+        </div>
+        <!-- designer -->
+        <div class="designer">
+
+            <div class="container-fluid my-4">
+                <div class="row">
+                    <!-- Left Banner -->
+                    <div class="col-md-5">
+                        <div class="left-banner">
+                            <div class="banner-overlay">
+                                <h4><img src="logo2.svg" alt="icon" width="20"> New
+                                    Arrivals</h4>
+                                <div class="shop">SHOP NOW </div> <!--shop now-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Carousel -->
+                    <div class="col-md-7">
+                        <div class="d-flex overflow-auto gap-3">
+                            <!-- Product Card 1 -->
+                            <div class="card product-card" style="min-width: 250px;">
+                                <img src="men.avif" class="card-img-top" alt="Product 1">
+                                <div class="card-body">
+                                    <span class="badge bg-primary">JUST IN</span>
+                                    <p class="text-muted small mb-1 mt-2">Formal Suits</p>
+                                    <h6>Men Navy Solid Formal Two ...</h6>
+                                    <p class="fw-bold">₹ 10,999</p>
+                                    <div class="color-dot"></div> <span class="text-muted small">Navy</span>
+                                </div>
+                            </div>
+
+                            <!-- Product Card 2 -->
+                            <div class="card product-card" style="min-width: 250px;">
+                                <img src="laddy.avif" class="card-img-top" alt="Product 2">
+                                <div class="card-body">
+                                    <span class="badge bg-primary">JUST IN</span>
+                                    <p class="text-muted small mb-1 mt-2">Formal Blazers</p>
+                                    <h6>Men Navy Textured Formal B...</h6>
+                                    <p class="fw-bold">₹ 6,999</p>
+                                    <div class="color-dot"></div> <span class="text-muted small">Navy</span>
+                                </div>
+                            </div>
+                            <div class="card product-card" style="min-width: 250px;">
+                                <img src="pants.avif" class="card-img-top" alt="Product 2">
+                                <div class="card-body">
+                                    <span class="badge bg-primary">JUST IN</span>
+                                    <p class="text-muted small mb-1 mt-2">Formal Blazers</p>
+                                    <h6>Men Navy Textured Formal B...</h6>
+                                    <p class="fw-bold">₹ 6,999</p>
+                                    <div class="color-dot"></div> <span class="text-muted small">Navy</span>
+                                </div>
+                            </div>
+                            <div class="card product-card" style="min-width: 250px;">
+                                <img src="laddy.avif" class="card-img-top" alt="Product 2">
+                                <div class="card-body">
+                                    <span class="badge bg-primary">JUST IN</span>
+                                    <p class="text-muted small mb-1 mt-2">Formal Blazers</p>
+                                    <h6>Men Navy Textured Formal B...</h6>
+                                    <p class="fw-bold">₹ 6,999</p>
+                                    <div class="color-dot"></div> <span class="text-muted small">Navy</span>
+                                </div>
+                            </div>
+
+                            <div class="card product-card" style="min-width: 250px;">
+                                <img src="men.avif" class="card-img-top" alt="Product 2">
+                                <div class="card-body">
+                                    <span class="badge bg-primary">JUST IN</span>
+                                    <p class="text-muted small mb-1 mt-2">Formal Blazers</p>
+                                    <h6>Men Navy Textured Formal B...</h6>
+                                    <p class="fw-bold">₹ 6,999</p>
+                                    <div class="color-dot"></div> <span class="text-muted small">Navy</span>
+                                </div>
+                            </div>
+
+                            <div class="card product-card" style="min-width: 250px;">
+                                <img src="women.avif" class="card-img-top" alt="Product 2">
+                                <div class="card-body">
+                                    <span class="badge bg-primary">JUST IN</span>
+                                    <p class="text-muted small mb-1 mt-2">Formal Blazers</p>
+                                    <h6>Men Navy Textured Formal B...</h6>
+                                    <p class="fw-bold">₹ 6,999</p>
+                                    <div class="color-dot"></div> <span class="text-muted small">Navy</span>
+                                </div>
+                            </div>
+
+                            <!-- Add more product cards  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- next main div -->
+        <div class="Styles">
+            <div class="trending">
+                <h2>Trending Styles</h2>
+            </div>
+            <div class="all">
+                <div><a href=""> ALL </a></div>
+                <div><a href=""> MEN</a></div>
+                <div><a href=""> WOMEN</a></div>
+                <div><a href="">BOY</a></div>
+                <div><a href="">GIRL</a></div>
+
+            </div>
+            <div class="scrolling-pics">
+                <div class="all-products">
+                    <div class="home-card">
+                        <img src="kids.avif" alt="home">asdf
+                        <div class="heart">♡</div>
+                    </div>
+                    <div class="price">
+                        sweatshirts
+                        <div class="describe"> Boys Navy Solid Sw...</div>
+                        <span class="price-old">1,299</span>
+                         <span class="new-price">999</span>
+                        <span class="discount">11% OFF</span>
+
+
+                        <!-- <div class="color-dot"><span style="margin-top: -5px;">Navy</span></div> -->
+                    </div>
+                    <div class="color-dot"></div> 
+                <span class="color-writtings">Navy</span>
+                </div>
+
+                <div class="all-products">
+
+                    <div class="home-card">
+                        <img src="kid2.avif" alt="home">asdf
+                        <div class="heart">♡</div>
+                    </div>
+                    <div class="price">
+                        sweatshirts
+                        <div class="describe"> Boys Navy Solid Sw...</div>
+                        <span class="price-old">1,299</span>
+                         <span class="new-price">999</span>
+                        <span class="discount">11% OFF</span>
+
+                    </div>
+                    <div class="color-dot"></div> 
+                <span class="color-writtings">Navy</span>
+                     <!-- <div class="color-dot"><span class="dot-content">navy</span></div> -->
+                </div>
+
+                <div class="all-products">
+                    <div class="home-card">
+                        <img src="girls.avif" alt="home">asdf
+                        <div class="heart">♡</div>
+                    </div>
+                    <div class="price">
+                        sweatshirts
+                        <div class="describe"> Boys Navy Solid Sw...</div>
+                        <span class="price-old">1,299</span>
+                         <span class="new-price">999</span>
+                        <span class="discount">11% OFF</span>
+
+                    </div>
+                    <div class="color-dot"></div> 
+                <span class="color-writtings">Navy</span>
+                </div>
+
+                <div class="all-products">
+                    <div class="home-card">
+                        <img src="pants.avif" alt="home">asdf
+                        <div class="heart">♡</div>
+                    </div>
+                    <div class="price">
+                        sweatshirts
+                        <div class="describe"> Boys Navy Solid Sw...</div>
+                        <span class="price-old">1,299</span> <span class="new-price">999</span>
+                        <span class="discount">11% OFF</span>
+
+                    </div>
+                    <div class="color-dot"></div> 
+                <span class="color-writtings">Navy</span>
+                </div>
+
+
+                <div class="all-products">
+                    <div class="home-card">
+                        <img src="women.avif" alt="home">asdf
+                        <div class="heart">♡</div>
+                    </div>
+                    <div class="price">
+                        sweatshirts
+                        <div class="describe"> Boys Navy Solid Sw...</div>
+                        <span class="price-old">1,299</span>
+                         <span class="new-price">999</span>
+                        <span class="discount">11% OFF</span>
+                    </div>
+                  <div class="color-dot"></div> 
+                <span class="color-writtings">Navy</span>  
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="divider2"><img src="divider_2x.jpg" alt=""></div>
+
+        <!-- laddy sitting on the bench -->
+        <div class="laddy-sitting">
+        </div>
+        <div class="yellow-box">
+            <div class="box-details">
+                <div> <img src="small-yellow.svg" alt=""> </div>
+                <div>
+                    <h6 class="mb-0">Allen Solly Member</h6>
+                </div>
+
+            </div>
+            <h2><b>EARN POINTS<br>ON EVERY PURCHASE</b></h2>
+            <p>Register with us to get latest updates and spend your point to buy.</p>
+            <button class="btn-blue">SIGN UP NOW</button>
+        </div>
+
+        <div style="height: 100px; "></div>
+
+
+        <!-- blue box of gifts -->
+        <div class="bluebox">
+
+            <div class="earn"> <span style="color: yellow;">Refer & Earn with</span> <span style="color: white;">the
+                    Referral
+                    Program</span>
+            </div>
+
+            <div class="gift"><img src="gift.svg" alt=""></div>
+            <div class="Invite">Invite your friends and earn up to ₹ 7500 in discounts.</div>
+            <button class="btn">SIGN UP NOW</button>
+        </div>
+
+        <div style="height: 60px; "></div>
+
+        <div class="storelocator">
+            <div><img src="storelocator.png" alt="">
+                <div class="location">
+                    <h2><b>LOCATE</b></h2>
+                </div>
+            </div>
+            <div class="store">ALLEN SOLLY STORE</div>
+            <div class="store-input"><input type="text" name="" id="" placeholder=" Enter Your Pin Code/City/Area">
+                <a href="">SHOW ME</a>
+            </div>
+        </div>
+        <div class="view-products">VIEW ALL PRODUCTS</div>
+
+        <!-- below icons3 -->
+        <div class="icon3">
+            <div class="Shipping">
+                <div><img src="free_shipping.png" alt=""></div>FREE SHIPPING
+            </div>
+            <div class="return">
+                <div><img src="return.png" alt=""></div>RETUEN WITHIN 15 DAYS
+            </div>
+            <div class="delivery">
+                <div><img src="delivery.png" alt=""></div>EXPRESS DELIVERY IN STORE MODE
+            </div>
+            <div class="hr"></div>
+        </div>
+
+    </section>
+
+
+    <!-- footer section -->
+    <footer>
+        <div class="main-footer">
+            <div class="about-us">
+                <div class="foot1">
+                    <div class="need">NEED HELP? </div>
+                    <div class="help">
+                        <div style="padding-top: 10px;">Order Status</div>
+                        <div style="padding-top: 10px;"> Delivery </div>
+                        <div style="padding-top: 10px;"> Returns </div>
+                        <div style="padding-top: 10px;">FAQs </div>
+                        <div style="padding-top: 10px;">Shipping Policy </div>
+                        <div style="padding-top: 10px;">Return and Cancellation policy </div>
+                        <div style="padding-top: 10px;"> Contact Us </div>
+                    </div>
+                </div>
+                <div class="foot2">
+                    <div class="about">ABOUT US</div>
+                    <div class="us">
+                        <div style="padding-top: 10px;"> Aditya Birla Lifestyle Brands Ltd </div>
+                        <div style="padding-top: 10px;"> Find a Store </div>
+                        <div style="padding-top: 10px;"> Allen Solly Blogs </div>
+                        <div style="padding-top: 10px;"> Terms and conditions For Membership Program </div>
+                        <div style="padding-top: 10px;"> Bulk Order
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="join">
+                <h3><img src="small-yellow.svg" alt=""> JOIN THE ALLEN SOLLY COMMUNITY</h3>
+                <input type="text" placeholder="Enter your e-mail / mobile number ">
+                <p>Sign up for updates on the latest Allen Solly collection, <br>campaigns and videos.</p>
+                <span> <strong>FIND US ON SOCIAL</strong></span>
+                <span class="social-icons">
+                    <img src="social-media-logo-as_1.svg" alt=""></span>
+
+
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- details -->
+
+
+    <div class="details">
+        <div>
+            <p>Allen Solly - Crafting The Unconventional Fashion Statements</p>
+            <p style="font-size: 15px;"><b>Allen Solly Men - A Stellar Collection Of Sophisticated & Contemporary Pieces
+                    Of Apparel For Men</b>
+            </p>
+            <div class="number-headings" style="padding-bottom: 10px;">1. Shirts For Men</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">We have a shirt for every kind of man, perfectly
+                tailored for every occasion.
+                Our determination to
+                innovate high-quality fabrics, premium stitching techniques, vivid colors, and elegant designs for our
+                clothing range <br>
+                has come a long way. By creating options like formal shirts for men, striped shirts for men, black and
+                white shirts for men, and slim-fit shirts for men we have amassed an impressive online collection that
+                caters to
+                <br> every need.
+            </div>
+
+            <div class="number-headings" style="padding-bottom: 10px;">2. T-shirts For Men</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">We are constantly creating and innovating trends
+                that keep us at the cutting
+                edge of fashion. Our collection of Allen Solly t-shirts for men represents just that. Using bold colors
+                and playful designs to create looks that <br>
+                highlight your unique personality. We understand that the young adult needs a collection of men's
+                t-shirts that showcases his fashion-forward and trendy style.
+            </div>
+
+            <div class="number-headings" style="padding-bottom: 10px;">3. Blazers For Men</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">As fashion moves away from its rigid form, rules
+                are broken and formal trends
+                are left behind to form new ones. High fashion designs are seen at the forefront and that's where you'll
+                find the Allen Solly blazers for <br>
+                men. Every blazer has its own personality trait that it lends to the outfit.
+            </div>
+            <div class="number-headings" style="padding-bottom: 10px;">4. Sweatshirts For Men</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">Our remarkable obsession for breaking tradition
+                to make the individual shine
+                has resulted in some of the most creative designs in fashion. We use this same enthusiasm while creating
+                looks for sweatshirts for men.</div>
+
+            <div class="number-headings" style="padding-bottom: 10px;"> 5. Jeans For Men</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">At Allen Solly, the evergreen menâs jeans are
+                tailored to let you express
+                yourself with comfort and effortless styling. In our online wardrobe, you will find a spectrum of the
+                most comfortable jeans for men,<br>
+                ranging from skinny-fit jeans for men to tapered fit jeans for men.
+            </div>
+
+            <p style="font-size: 15px; padding-bottom: 5px; padding-top: 20px;"><b>Allen Solly Women - Classy, Unhinged
+                    & Unconventional</b></p>
+
+            <div class="number-headings" style="padding-bottom: 10px;">1. Dresses For Women</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">Stitched and sown with the highest quality of
+                blended fabric to deliver
+                unmatched comfort - Allen Sollyâs collection of casual dresses for women online is one distinguished
+                aisle to choose from.
+            </div>
+
+
+            <div class="number-headings" style="padding-bottom: 10px;">2. Accessories For Women</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">A range of functional and trending designs of
+                small wallets for women, waist
+                belt for women, clutches and wallets for women, and bags for women online are brought together at Allen
+                Sollyâs online collection of <br>
+                accessories for women
+            </div>
+
+            <div class="number-headings" style="padding-bottom: 10px;">3. Trousers For Women</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">We believe all women are beautiful, no matter
+                their shape, size, or color. At
+                our online store, youâll find that weâve created the most inclusive design choices for formal
+                womenâs trousers that boast <br>
+                beautiful, form-fitting, smart, and refined designs to compliment your body type. We believe in
+                âOwning your shapeâ, and at Allen Solly, weâve done just that through our trousers for women.
+
+            </div>
+
+            <div class="number-headings" style="padding-bottom: 10px;">4. Shirts For Women</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">
+                We have set a higher standard of formal shirts for women, one that is unmatched. Paying attention to
+                detail and creating apparel that is tailored uniquely to be your piece of luxury. Designing ladies'
+                shirts in this way <br>
+                helps us make sure she is the highlight of the look, allowing the Allen Solly women to shine through.
+            </div>
+
+            <p style="font-size: 15px; padding-bottom: 10px; padding-top: 10px;"><b>Allen Solly Junior - Playful,
+                    Vivacious & Comfortable</b>
+            </p>
+            <p style="font-size: 15px; padding-bottom: 5px; padding-top: 20px;"><b>Allen Solly Fashion For Boys - </b>
+            </p>
+
+            <div class="number-headings" style="padding-bottom: 10px;">1. Shirts & Tees For Boys:</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">
+                Allen Sollyâs delightful selection of lively colors and chic patterns, makes our collection of shirts
+                and tees for boys very exciting.
+            </div>
+
+            <div class="number-headings" style="padding-bottom: 10px;">2. Shorts For Boys:</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">
+                We weave comfort with style, creating the most trendsetting and premium shorts for boys.
+            </div>
+
+            <div class="number-headings" style="padding-bottom: 10px;">3. Bottoms For Boys:</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">
+                From jeans to trousers and chinos for boys, an endless aisle of amazing choices that are made from the
+                top-quality fabric into trending styles. Allen Sollyâs collection of bottoms for boys is a class
+                apart.
+            </div>
+
+            <div class="number-headings" style="padding-bottom: 10px;">4. Winter Wear For Boys:</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">
+                Making warm and comfortable clothing stylish, the knitwear collection at Allen Solly embraces the
+                memories made as a young boy and leaves a mark to inspire a winter aesthetic for times to come.
+
+
+            </div>
+
+            <p style="font-size: 15px; padding-bottom: 5px; padding-top: 20px;"><b>Allen Solly Fashion For Girls -
+                </b></p>
+
+            <div class="number-headings" style="padding-bottom: 10px;">1. Frock For Girls:</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">
+                The charming and delightful collection of frock for girls is one to explore. Allen Solly creates the
+                most perfect palette of vivacious colors and designs to suit every celebratory occasion.
+            </div>
+
+            <div class="number-headings" style="padding-bottom: 10px;">2. Tops, Tees For Girls:</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">
+                The basics of every young girlâs wardrobe, Allen Solly brings an exciting range of selections for tops
+                for girls, t-shirts for girls, and blouses for girls. A premium range of fabric, coupled with on-trend
+                designs, <br>
+                making your everyday outfit inspiring.
+            </div>
+
+            <div class="number-headings" style="padding-bottom: 10px;">3. Bottoms & Leggings For Girls:</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">
+                The freedom of stretchable and structured fabrics is essential for enjoying the young days of life.
+                Allen Sollyâs collection of bottoms and leggings for girls brings this comfort to you.
+            </div>
+
+
+            <div class="number-headings" style="padding-bottom: 10px;">4. Skirts For Girls:</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">
+                Made to flow and inspire the love for playful things in life, Allen Sollyâs collection of skirts for
+                girls is one to explore for the girls full of life.
+            </div>
+
+            <div class="number-headings" style="padding-bottom: 10px;">5. Winterwear For Girls:</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">
+                The opportunity winter presents to wear knitwear, should be fully utilized. Allen Sollyâs collection
+                of winterwear for girls is cozy, comfortable and a line of premium on-trend styles.
+            </div>
+
+            <div class="number-headings" style="padding-bottom: 10px;">6. Shorts & Capris For Girls:</div>
+            <div class="detail-contents" style="padding-bottom: 10px;">
+                The evergreen favorite of every young girl are shorts and capris. Our collection of shorts and capris
+                for girls re-imagines the styles for 2023, giving her the edge to be comfortable and stylish,
+                effortlessly.
+            </div>
+
+            <div class="policy">Privacy Policy <span style="color: black; font-size: medium;">|</span> Terms &
+                Conditions of Use <span style="margin-left: 800px;">© 2025 All Rights Reserved. Aditya Birla
+                    Group</span>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="last-border"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

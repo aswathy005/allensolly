@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Men,Women &Kids online shopping</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="shortcut icon" href="title icon.jpg" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            /* overflow-x: scroll; */
+
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: white;
+            border: 1px solid rgb(245, 244, 244);
+            /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        .nav-items a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #002b4d;
+
+        }
+
+        .nav-items :hover {
+            color: red;
+        }
+
+        .search-bar {
+            padding: 6px 12px;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            /* border: 1px solid rgb(245, 244, 244); */
+            /* border-bottom: 1px solid black; */
+
+        }
+
+        .express img {
+            width: 70%;
+        }
+
+        .container {
+            text-align: center;
+            height: 200px;
+            width: 100%;
+            /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; */
+            border: 1px solid rgb(245, 244, 244);
+
+        }
+
+        .category-buttons .btn {
+            border: 1px solid black;
+            color: #02264a;
+            margin: 5px;
+            border-radius: 8px;
+        }
+
+        .container p {
+            color: #02264a;
+
+        }
+
+        .text-men {
+            color: #04386b;
+            font-weight: bold;
+            /* text-align: center; */
+        }
+
+        .dropdown {
+            height: 150px;
+            display: flex;
+            padding-bottom: 20px;
+
+        }
+
+        .drop-select {
+            width: 70%;
+            height: 150px;
+        }
+
+        .popular select {
+            width: 30%;
+            height: 150px;
+            padding-top: 190px;
+        }
+
+
+        select {
+            color: black;
+            font-size: 13px;
+            margin-top: 20px;
+            padding-left: 10px;
+            /* padding-right: 10px; */
+            border: 0px;
+            margin-left: 80px;
+        }
+
+        /* images of main body */
+
+        .boxline {
+            /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; */
+            margin-top: 60px;
+            margin-top: 20px;
+            /* border: 1px solid rgb(245, 244, 244); */
+            margin-left: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+
+        }
+
+        .all-products {
+            margin-left: 40px;
+            padding-top: 80px;
+            border-top: 1px solid rgb(245, 244, 244);
+        }
+
+        .heart {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: black;
+            background-color: white(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /* .home-price {
+            font-size: 13px;
+            color: white;
+        } */
+
+        .home-card {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 500px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            background-color: white;
+            position: relative;
+        }
+
+        .home-card img {
+            width: 100%;
+            height: 500px;
+            justify-content: space-evenly;
+            object-fit: cover;
+        }
+
+        .small-writtings {
+            color: grey;
+            font-size: small;
+        }
+
+        .describe {
+            font-weight: bold;
+            color: black;
+            font-size: 15px;
+        }
+
+        .price-old {
+            color: grey;
+            text-decoration: line-through;
+        }
+
+        .discount {
+            color: #fb266d;
+            font-size: 16px;
+        }
+
+        .color-dot {
+
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 5px;
+            border: 2px solid gray;
+            background-color: maroon;
+
+        }
+
+        .color-writtings {
+            margin-top: -3px;
+        }
+
+        .load-more button {
+            height: 50px;
+            width: 200px;
+            margin-top: 100px;
+            margin-left: 650px;
+            color: #002b4d;
+            border-radius: 2%;
+
+        }
+
+        .bottom-logo {
+            text-align: center;
+        }
+
+        .bottom-writtings {
+            color: #04386b;
+            height: 30px;
+            width: 1000px;
+            margin-left: 200px;
+        }
+
+
+        .icon3 {
+            display: flex;
+            /* margin-left: 300px; */
+            width: 100%;
+            font-size: 12px;
+            color: black;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ddd;
+            justify-content: space-evenly;
+            margin-top: 30px;
+
+        }
+
+        .shipping {
+            display: block;
+            /* margin-right: 30px; */
+            padding-right: 50px;
+        }
+
+        .return {
+            display: block;
+            /* margin-left: 280px;
+            margin-right: 30px; */
+            text-align: center;
+        }
+
+        .delivery {
+            display: block;
+            /* margin-left: 240px;
+            margin-right: 30px; */
+            text-align: center;
+        }
+
+        /* .bottom-logo img{
+            height: 400px;
+            width: 400px;
+        } */
+
+        .main-footer {
+            display: flex;
+
+            border-bottom: 2px solid #ddd;
+        }
+
+        .need {
+            font-size: 13px;
+            font-weight: bold;
+            padding-bottom: 5px;
+            color: #222;
+
+        }
+
+        .help {
+            font-size: small;
+            color: #222;
+
+
+        }
+
+        .about {
+            font-size: 13px;
+            font-weight: bold;
+            padding-bottom: 5px;
+            color: #222;
+
+        }
+
+        .us {
+            font-size: small;
+            color: #222;
+
+        }
+
+        .about-us {
+            height: 280px;
+            width: auto;
+            display: flex;
+            /* margin-bottom: 2px solid #222;
+            margin-top: 2px solid #222; */
+        }
+
+        /* .social-icons {
+            margin-left: 900px;
+        } */
+        .join h3 {
+            font-size: 13px;
+            color: #002b4d;
+            font-weight: bold;
+        }
+
+        .join p {
+            font-size: smaller;
+        }
+
+        .join {
+            margin-left: 300px;
+        }
+
+        .join input {
+            width: 90%;
+            padding: 8px;
+            border-right: 0px;
+            font-size: 14px;
+            border-top: 0px;
+            border-left: 0px;
+            border-color: none;
+        }
+
+        .foot1 {
+            padding-left: 100px;
+        }
+
+        .foot2 {
+            padding-left: 100px;
+        }
+
+        .footer-mainhead {
+            margin-left: 100px;
+           margin-top: 10px;
+            font-size: 19px;
+            font-weight: bold;
+            color: #222;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .footer-sub {
+            margin-left: 100px;
+            font-size: 13px;
+            color: #040303;
+            margin-right: 100px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding-bottom: 20px;
+            /* margin-top: 10px; */
+        }
+          .policy {
+            margin-top: 30px;
+            color: grey;
+            font-size: small;
+            margin-left: 100px;
+            margin-right: 50px;
+        }
+    </style>
+
+<body>
+    <header class="navbar">
+        <img src="logo.png" alt="Allen Solly Logo" class="logo" />
+        <nav class="nav-items">
+            <a href="main.html">SALE</a>
+            <a href="men.html">MENS</a>
+            <a href="women.html">WOMENS</a>
+            <a href="main.html">JUNIORS</a>
+            <a href="main.html">SPECIAL SIZES</a>
+            <a href="main.html">NEW ARRIVALS</a>
+        </nav>
+        <input type="text" placeholder="🔍Search Bags" class="search-bar" />
+
+        <div class="express"><img src="express.png" alt=""></div>
+        <div class="birla"><img src="ABFRL_logo_image.svg" alt=""></div>
+    </header>
+
+    <div class="container">
+        <h2 class="text-men">WOMEN</h2>
+        <p>SELECT YOUR CATEGORY</p>
+
+        <div class="category-buttons">
+            <button class="btn">Bags</button>
+            <button class="btn">Belts</button>
+            <button class="btn">Cargos</button>
+            <button class="btn">Casual Blazers</button>
+            <button class="btn">Casual Shirts</button>
+            <button class="btn">Casual Shoes</button>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <div class="drop-select">
+            <select id="color" name="color">
+                <option value="" disabled selected>All Discount</option>
+                <option value="red"></option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected> Discount</option>
+                <option value="red">Red</option>
+            </select>
+
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Category</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Brand</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Occasion</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Sizes</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Price</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Color</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Fit</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Sleeves</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Pattern</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Neck</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Cuffs</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>FrontOpening</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>SuitFront</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Wash</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>Hood</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>BagType</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>UpperMaterial</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>ShoeType</option>
+                <option value="red">Red</option>
+            </select>
+            <select id="color" name="color">
+                <option value="" disabled selected>Gender</option>
+                <option value="red">Red</option>
+            </select>
+
+            <select id="color" name="color">
+                <option value="" disabled selected>TrouserFront</option>
+                <option value="red">Red</option>
+            </select>
+        </div>
+
+        <div class="Popular">
+            <select id="color" name="color">
+                <option value="" disabled selected>Sort By: <span class="underline">Popular</span></option>
+                <option value="red">Red</option>
+            </select>
+
+        </div>
+
+
+    </div>
+
+    <div class="boxline">
+        <div class="all-products">
+            <div class="home-card">
+                <img src="women.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+        <div class="all-products">
+            <div class="home-card">
+                <img src="pants.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+        <div class="all-products">
+            <div class="home-card">
+                <img src="women2.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+        <div class="all-products">
+            <div class="home-card">
+                <img src="women3.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+        <div class="all-products">
+            <div class="home-card">
+                <img src="bag1.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+        <div class="all-products">
+            <div class="home-card">
+                <img src="women4.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+        <div class="all-products">
+            <div class="home-card">
+                <img src="pants.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+        <div class="all-products">
+            <div class="home-card">
+                <img src="women5.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+        <div class="all-products">
+            <div class="home-card">
+                <img src="women6.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+        <div class="all-products">
+            <div class="home-card">
+                <img src="bag2.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+        <div class="all-products">
+            <div class="home-card">
+                <img src="laddy.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+        <div class="all-products">
+            <div class="home-card">
+                <img src="women.avif" alt="home">
+                <div class="heart">♡</div>
+            </div>
+            <div class="price">
+                <div class="small-writtings">Formal Dresses</div>
+                <div class="describe"> Womens maroon formal Dressess </div>
+                <span class="price-old">₹ 1,299</span>
+                <span class="new-price">₹ 999</span>
+                <span class="discount">11% OFF</span>
+
+
+            </div>
+            <div class="color-dot"></div>
+            <span class="color-writtings">Navy</span>
+        </div>
+
+
+    </div>
+
+    <div class="load-more">
+        <button>Load More</button>
+    </div>
+
+    <div class="bottom-logo"><img src="logo.png" alt=""></div>
+
+    <div class="bottom-writtings">Online Shopping For Men: Shop online for mens apparel, accessories & footwear at Allen
+        Solly. Choose from a wide range of mens shirts, t-shirts, jeans, trousers, suits & blazers ,
+        accessories & footwear online. Buy now!</div>
+
+    <div class="icon3">
+        <div class="Shipping">
+            <div><img src="free_shipping.png" alt=""></div>FREE SHIPPING
+        </div>
+        <div class="return">
+            <div><img src="return.png" alt=""></div>RETUEN WITHIN 15 DAYS
+        </div>
+        <div class="delivery">
+            <div><img src="delivery.png" alt=""></div>EXPRESS DELIVERY IN STORE MODE
+        </div>
+        <div class="hr"></div>
+    </div>
+
+    <!-- foooter -->
+    <footer>
+        <div class="main-footer">
+            <div class="about-us">
+                <div class="foot1">
+                    <div class="need">NEED HELP? </div>
+                    <div class="help">
+                        <div style="padding-top: 10px;">Order Status</div>
+                        <div style="padding-top: 10px;"> Delivery </div>
+                        <div style="padding-top: 10px;"> Returns </div>
+                        <div style="padding-top: 10px;">FAQs </div>
+                        <div style="padding-top: 10px;">Shipping Policy </div>
+                        <div style="padding-top: 10px;">Return and Cancellation policy </div>
+                        <div style="padding-top: 10px;"> Contact Us </div>
+                    </div>
+                </div>
+                <div class="foot2">
+                    <div class="about">ABOUT US</div>
+                    <div class="us">
+                        <div style="padding-top: 10px;"> Aditya Birla Lifestyle Brands Ltd </div>
+                        <div style="padding-top: 10px;"> Find a Store </div>
+                        <div style="padding-top: 10px;"> Allen Solly Blogs </div>
+                        <div style="padding-top: 10px;"> Terms and conditions For Membership Program </div>
+                        <div style="padding-top: 10px;"> Bulk Order
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="join">
+                <h3><img src="small-yellow.svg" alt=""> JOIN THE ALLEN SOLLY COMMUNITY</h3>
+                <input type="text" placeholder="Enter your e-mail / mobile number ">
+                <p>Sign up for updates on the latest Allen Solly collection, <br>campaigns and videos.</p>
+                <span> <strong>FIND US ON SOCIAL</strong></span>
+                <span class="social-icons">
+                    <img src="social-media-logo-as_1.svg" alt=""></span>
+
+
+            </div>
+        </div>
+
+    </footer>
+    <div class="footer-mainhead">WomenÃÂ¢ÃÂÃÂs Clothing from Solly by Allen Solly</div>
+    <div class="footer-sub">Solly by Allen Solly caters to the young woman professional who wants to break free from the
+        corporate norms and redefine her work wear. The smart yet fashionable womenÃÂ¢ÃÂÃÂs clothing is perfectbr
+        to wear to work and beyond. Ditching the classic formal business look, Solly by Allen Solly changes the way
+        women dress to work by introducing ÃÂ¢ÃÂÃÂFriday DressingÃÂ¢ÃÂÃÂ to yourbr
+        work wear roster. The concept enables women to dress for business while looking independently stylish and chic.
+        <br>
+
+        WomenÃÂ¢ÃÂÃÂs clothing from Solly by Allen Solly is also fashion forward, keeping in mind current trends
+        and contemporary sensibilities. From dresses to accessories, women can now shop online for <br>
+        complete wardrobe solutions from allensolly.com. The womenÃÂ¢ÃÂÃÂs collections are sure to give work wear a
+        little edge with their smart silhouettes, bold prints and bold pops of colour. The versatility <br>
+        of Solly by Allen Solly is perfect for women to wear from office to dinner after. From the classic white shirt
+        to fashionable shift dress, Solly by Allen Solly offers a plethora of styles for women to pick from.
+    </div>
+
+    <div class="footer-mainhead">Redefining Work Wear for Women</div>
+    <div class="footer-sub">Master a modern work wear dress code with shirts, dresses, skirts and blazers from Solly by
+        Allen Solly. From your first interview to big client meetings, you can now look your best with a chic Allen
+        Solly dress or <br> shirt and trouser ensemble. The collection of blouses and shirts are timeless and will be in
+        style for seasons on end. You can wear a printed blouse with a pair of Allen Solly trousers to work or opt for a
+        <br>
+        fashionable Allen Solly skirt paired with a tucked in shirt. The shirts and blouses come in a beautiful array of
+        prints and patterns and are stylized with unique details that give it a stylish edge. <br>
+
+        Solly by Allen Solly also offers the latest fashion in trousers and leggings. You can choose from a wide range
+        of formal pants to casual trousers like jog pants and capris. The formal trousers come a in various <br>
+        silhouettes and in a plethora of colours that go beyond your basic neutrals and black. The trousers can be
+        partnered with Allen Solly blazers for women for a sharp 9 to 5 look. The casual trousers are designed to keep
+        <br>
+        in mind comfort and style. You can shop online on allensolly.com and browse through the entire collection or
+        visit a store near you.
+    </div>
+
+    <div class="footer-mainhead">Desk to Dinner Ensembles from Solly by Allen Solly</div>
+    <div class="footer-sub">Go from morning to evening effortlessly in style with versatile ensembles from Solly by
+        Allen Solly. The outfits are curated to provide you a weekday wardrobe that is appropriate for every event on
+        your calendar . <br>
+        The desk to dinner outfits come with promise of all day comfort while giving you a stylish look. You can choose
+        from separates like shirts and pants or go for a dress that does all the hardwork to keep you looking <br>
+        glam. Visit your nearest store to browse through the fabulous collection or opt for online shopping and go to
+        Allensolly.com.</div>
+
+
+          <div class="policy">Privacy Policy <span style="color: black; font-size: medium;">|</span> Terms &
+                Conditions of Use <span style="margin-left: 800px;">© 2025 All Rights Reserved. Aditya Birla
+                    Group</span>
+            </div>
+
+
+</body>
